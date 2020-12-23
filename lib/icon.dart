@@ -347,7 +347,143 @@ class IconScrollWidgets extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+          height: height,
+          width: width,
+          color: Color(0xFF111111),
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: width * 0.12,
+              right: width * 0.12,
+            ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: height * 0.08,
+                    bottom: height * 0.08,
+                  ),
+                  child: Text(
+                    "MAKE A CHOICE",
+                    style: TextStyle(
+                      fontFamily: "Gelion",
+                      fontSize: 84,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFFe7e7e7),
+                    ),
+                  ),
+                ),
+                GridView.count(
+                  crossAxisCount: 3,
+                  shrinkWrap: true,
+                  children: [
+                    ChoiceItem(),
+                    ChoiceItem(),
+                    ChoiceItem(),
+                  ],
+                )
+              ],
+            ),
+          ),
+        )
       ],
+    );
+  }
+}
+
+class ChoiceItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Container(
+        color: Color(0xFFe7e7e7),
+        child: Row(
+          children: [
+            Image.asset(
+              "skin.jpg",
+              scale: 3,
+            ),
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "Skin",
+                    style: TextStyle(
+                      fontFamily: "Gelion",
+                      fontSize: 34,
+                      color: Color(0xFF111111),
+                    ),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Ultimate scratch protection",
+                        style: TextStyle(
+                          fontFamily: "Kale Sans Mono",
+                          fontSize: 17,
+                          height: 1.65,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF111111),
+                        ),
+                      ),
+                      Container(
+                        height: 2,
+                        width: 36,
+                        color: Colors.grey.withAlpha(128),
+                      ),
+                      Text(
+                        "0.23mm thin",
+                        style: TextStyle(
+                          fontFamily: "Kale Sans Mono",
+                          fontSize: 17,
+                          height: 1.65,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF111111),
+                        ),
+                      ),
+                      Container(
+                        height: 2,
+                        width: 36,
+                        color: Colors.grey.withAlpha(128),
+                      ),
+                      Text(
+                        "Easy to apply",
+                        style: TextStyle(
+                          fontFamily: "Kale Sans Mono",
+                          fontSize: 17,
+                          height: 1.65,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF111111),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    color: Color(0xFFD50014),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(32, 12, 32, 12),
+                      child: Text(
+                        "REQUEST",
+                        style: TextStyle(
+                          letterSpacing: 2,
+                          fontSize: 17,
+                          fontFamily: "Gelion",
+                          color: Color(0xFFe7e7e7),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
